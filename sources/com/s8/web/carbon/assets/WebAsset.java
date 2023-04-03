@@ -3,9 +3,9 @@ package com.s8.web.carbon.assets;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.s8.arch.magnesium.handles.h1.H1Handler;
 import com.s8.arch.silicon.SiliconEngine;
 import com.s8.stack.arch.helium.mime.MIME_Type;
-import com.s8.stack.arch.magnesium.handles.h1.H1Handler;
 import com.s8.web.carbon.web.AssetContainerModule;
 
 
