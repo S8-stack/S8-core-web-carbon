@@ -111,7 +111,7 @@ public class CarbonWebService {
 		if(isVerbose) {
 			System.out.println("---> CARBON: "+request.path.pathname);
 		}
-		app.pushT1Task(new CarbonWebTask(webModule, request));
+		app.pushAsyncTask(new CarbonWebTask(webModule, request));
 	}
 
 	public void stop() {

@@ -61,7 +61,7 @@ public class AssetUpdateModule {
 	 * Process all events for keys queued to the watcher
 	 */
 	public void start() {
-		server.pushT2Task(new WatchAndUpdateTask(this, isVerbose));
+		server.pushWatchTask(new WatchAndUpdateTask(this, isVerbose));
 	}
 
 	

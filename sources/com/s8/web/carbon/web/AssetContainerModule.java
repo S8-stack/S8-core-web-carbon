@@ -104,7 +104,7 @@ public class AssetContainerModule {
 
 	
 	public void pushTask(FileDiskTask task) {
-		server.pushT1Task(task);
+		server.pushAsyncTask(task);
 	}
 
 	public void stop() {

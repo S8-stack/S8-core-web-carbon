@@ -56,7 +56,7 @@ public abstract class BasicWebAsset extends WebAsset {
 
 	@Override
 	public void compute() {
-		getAppEngine().pushT1Task(new LoadTask(path, fragmentLength));
+		getAppEngine().pushAsyncTask(new LoadTask(path, fragmentLength));
 	}
 
 
