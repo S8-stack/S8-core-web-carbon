@@ -1,6 +1,6 @@
 package com.s8.web.carbon.assets.bundles;
 
-import com.s8.arch.magnesium.handles.h1.H1Handler;
+import com.s8.arch.magnesium.handlers.h1.H1Handler;
 import com.s8.arch.silicon.SiException;
 import com.s8.io.bytes.linked.LinkedBytes;
 import com.s8.stack.arch.helium.http2.HTTP2_Status;
