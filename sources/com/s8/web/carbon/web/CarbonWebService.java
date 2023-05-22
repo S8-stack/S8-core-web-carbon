@@ -7,7 +7,7 @@ import com.s8.arch.silicon.SiliconEngine;
 import com.s8.io.xml.annotations.XML_SetAttribute;
 import com.s8.io.xml.annotations.XML_SetElement;
 import com.s8.io.xml.annotations.XML_Type;
-import com.s8.io.xml.handler.XML_Lexicon;
+import com.s8.io.xml.codebase.XML_Codebase;
 import com.s8.stack.arch.helium.http2.messages.HTTP2_Message;
 import com.s8.web.carbon.build.CarbonBuildContext;
 import com.s8.web.carbon.build.sources.WebModule;
@@ -74,7 +74,7 @@ public class CarbonWebService {
 	 * @param config
 	 * @throws Exception
 	 */
-	public CarbonWebService(SiliconEngine app, XML_Lexicon xml_Context, Config config) throws Exception {
+	public CarbonWebService(SiliconEngine app, XML_Codebase xml_Context, Config config) throws Exception {
 		super();
 
 		this.app = app;

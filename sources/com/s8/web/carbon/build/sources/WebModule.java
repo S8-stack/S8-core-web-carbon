@@ -5,7 +5,7 @@ import java.nio.file.Paths;
 
 import com.s8.io.xml.annotations.XML_SetValue;
 import com.s8.io.xml.annotations.XML_Type;
-import com.s8.io.xml.handler.XML_Lexicon;
+import com.s8.io.xml.codebase.XML_Codebase;
 import com.s8.web.carbon.build.CarbonBuildContext;
 
 @XML_Type(name = "module")
@@ -24,7 +24,7 @@ public class WebModule {
 	 * @param context
 	 * @throws Exception 
 	 */
-	public void build(XML_Lexicon context, CarbonBuildContext ctx) throws Exception {
+	public void build(XML_Codebase context, CarbonBuildContext ctx) throws Exception {
 		WebSources sources = (WebSources) context.deserialize(path.toFile());
 		sources.build(ctx);
 	}
