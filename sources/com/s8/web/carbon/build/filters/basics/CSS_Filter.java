@@ -1,5 +1,7 @@
 package com.s8.web.carbon.build.filters.basics;
 
+import java.nio.file.Path;
+
 import com.s8.io.xml.annotations.XML_Type;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.assets.basics.CSS_WebAsset;
@@ -10,11 +12,11 @@ public class CSS_Filter extends BasicWebAssetFilter {
 
 	
 	@Override
-	public WebAsset createAsset(CarbonBuildContext context) {
+	public WebAsset createAsset(CarbonBuildContext context, String webPathname, Path localPath) {
 		return new CSS_WebAsset(
 				context.getContainer(), 
-				context.getWebPathname(), 
-				context.getLocalPath(), 
+				webPathname, 
+				localPath, 
 				cacheControl, 
 				fragmentLength);
 	}

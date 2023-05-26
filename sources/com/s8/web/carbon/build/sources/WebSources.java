@@ -5,7 +5,6 @@ import java.nio.file.FileVisitResult;
 import java.nio.file.FileVisitor;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,19 +20,20 @@ import com.s8.web.carbon.syntax.CarbonSyntax;
 public class WebSources {
 
 
-	private Path localPath;
+	/*
+	private String sourcesRelativeLocalPathname;
 
 	@XML_SetElement(tag = "root-local-path")
 	public void setLocalPathname(String pathname) {
-		this.localPath = Paths.get(pathname);
+		this.sourcesRelativeLocalPathname = pathname;
 	}
+	*/
 
-
-	private String webPathname = CarbonSyntax.ROOT_WEB_PATHNAME;
+	private String sourcesRelativeWebPathname = CarbonSyntax.ROOT_WEB_PATHNAME;
 
 	@XML_SetElement(tag = "root-web-path")
 	public void setWebPathname(String pathname) {
-		this.webPathname = pathname;
+		this.sourcesRelativeWebPathname = pathname;
 	}
 
 
@@ -79,23 +79,24 @@ public class WebSources {
 	 * @return
 	 * @throws Exception
 	 */
-	public void build(CarbonBuildContext ctx) throws Exception {
+	public void build(CarbonBuildContext ctx, 
+			String webPathname, Path localPath) throws Exception {
 
 
+		String sourcesWebPathname = webPathname.concat(this.sourcesRelativeWebPathname);
+		Path sourcesLocalPath = localPath;
 
 		/* <builders> */
-		CarbonBuildContext context = new CarbonBuildContext(ctx, webPathname, localPath);
 		
 		for(WebAssetPointer builder : builders) {
-			builder.build(context);
+			builder.build(ctx, sourcesWebPathname, sourcesLocalPath);
 		}
 		/* </builders> */
 
 		// register directory and sub-directories
-		Path rootPath = context.getLocalPath();
 
 		
-		Files.walkFileTree(rootPath, new FileVisitor<Path>() {
+		Files.walkFileTree(sourcesLocalPath, new FileVisitor<Path>() {
 
 			@Override
 			public FileVisitResult preVisitDirectory(Path path, BasicFileAttributes attrs)
@@ -108,11 +109,11 @@ public class WebSources {
 			public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
 				
 				if(Files.isRegularFile(path)){
-					Path relativePath = rootPath.relativize(path);
-					String webPathname = context.getWebPathname()+relativePath.toString();
+					Path relativePath = sourcesLocalPath.relativize(path);
+					String fileWebPathname = sourcesWebPathname + relativePath.toString();
 					for(WebAssetFilter filter : filters) {
 						if(filter.isCapturing(relativePath)) {
-							filter.capture(context.relocate(webPathname, path));
+							filter.capture(ctx, fileWebPathname, path);
 						}
 					}
 				}
@@ -121,7 +122,7 @@ public class WebSources {
 
 			@Override
 			public FileVisitResult visitFileFailed(Path path, IOException exception) throws IOException {
-				if(context.isVerbose()) {
+				if(ctx.isVerbose()) {
 					System.out.println("Failed to load file: "+path);
 				}
 				return FileVisitResult.CONTINUE;

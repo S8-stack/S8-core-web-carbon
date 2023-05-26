@@ -1,6 +1,7 @@
 package com.s8.web.carbon.build.pointers;
 
 import java.io.IOException;
+import java.nio.file.Path;
 
 import com.s8.io.xml.annotations.XML_SetAttribute;
 import com.s8.io.xml.annotations.XML_Type;
@@ -59,5 +60,7 @@ public abstract class WebAssetPointer {
 	 * 
 	 * @throws IOException
 	 */
-	public abstract WebAsset build(CarbonBuildContext context) throws IOException;
+	public abstract WebAsset build(CarbonBuildContext context, 
+			String contextWebPathname, 
+			Path contextLocalPath) throws IOException;
 }

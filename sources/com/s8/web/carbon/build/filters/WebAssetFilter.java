@@ -50,9 +50,11 @@ public abstract class WebAssetFilter {
 	/**
 	 * 
 	 * @param context
-	 * @param webPathname
-	 * @param path
+	 * @param contextWebPathname
+	 * @param relativeLocalPathname
 	 * @throws IOException
 	 */
-	public abstract void capture(CarbonBuildContext context);
+	public abstract void capture(CarbonBuildContext context, 
+			String contextWebPathname, 
+			Path contextLocalPath);
 }

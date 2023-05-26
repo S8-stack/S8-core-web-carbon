@@ -1,6 +1,7 @@
 package com.s8.web.carbon.build.pointers.folder;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +15,11 @@ import com.s8.web.carbon.build.pointers.WebAssetPointer;
 @XML_Type(name = "folder")
 public class Folder extends WebAssetPointer {
 	
-	private String pathname;
+	private String relativePathname;
 	
 	@XML_SetAttribute(name = "path")
 	public void setPathname(String pathname) {
-		this.pathname = pathname;
+		this.relativePathname = pathname;
 	}
 	
 	
@@ -36,11 +37,13 @@ public class Folder extends WebAssetPointer {
 	}
 
 	@Override
-	public WebAsset build(CarbonBuildContext context) throws IOException {
-		context = context.move(pathname);
+	public WebAsset build(CarbonBuildContext context, String webPathname, Path localPath) throws IOException {
+		
+		String folderWebPathname = webPathname.concat(relativePathname);
+		Path folderLocalPath = localPath.resolve(relativePathname);
 		
 		for(WebAssetPointer builder : builders) {
-			builder.build(context);
+			builder.build(context, folderWebPathname, folderLocalPath);
 		}
 		
 		return null;

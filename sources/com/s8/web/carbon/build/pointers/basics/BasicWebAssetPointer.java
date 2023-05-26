@@ -31,15 +31,15 @@ public abstract class BasicWebAssetPointer extends WebAssetPointer {
 	}
 	
 	@Override
-	public WebAsset build(CarbonBuildContext context) throws IOException {
+	public WebAsset build(CarbonBuildContext context, String webPathname, Path localPath) throws IOException {
 		
 		// path
-		String webPathname = context.getWebPathname().concat(relativePathname);
-		Path path = context.getLocalPath().resolve(relativePathname);
+		String fileWebPathname = webPathname.concat(relativePathname);
+		Path fileLocalPath = localPath.resolve(relativePathname);
 		
-		WebAsset asset = createAsset(context.getContainer(), webPathname, path, cacheControl, fragmentLength);
+		WebAsset asset = createAsset(context.getContainer(), fileWebPathname, fileLocalPath, cacheControl, fragmentLength);
 		
-		context.getContainer().appendAsset(webPathname, asset);
+		context.getContainer().appendAsset(fileWebPathname, asset);
 		
 		return asset;
 	}

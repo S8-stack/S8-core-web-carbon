@@ -1,5 +1,7 @@
 package com.s8.web.carbon.build.filters.basics;
 
+import java.nio.file.Path;
+
 import com.s8.io.xml.annotations.XML_SetAttribute;
 import com.s8.io.xml.annotations.XML_Type;
 import com.s8.web.carbon.assets.WebAsset;
@@ -27,18 +29,26 @@ public abstract class BasicWebAssetFilter extends WebAssetFilter {
 
 	//public abstract void build(ContainerModule module, UpdateModule updater, String webPathname, Path path);
 	
-	public abstract WebAsset createAsset(CarbonBuildContext context);
+	
+	/**
+	 * 
+	 * @param context
+	 * @param webPathname
+	 * @param localPath
+	 * @return
+	 */
+	public abstract WebAsset createAsset(CarbonBuildContext context, String webPathname, Path localPath);
 	
 	
 
 	
 	@Override
-	public void capture(CarbonBuildContext context) {
-		if(!context.isWebPathnameRegistered()) {
+	public void capture(CarbonBuildContext context, String webPathname, Path localPath) {
+		if(!context.isWebPathnameRegistered(webPathname)) {
 
 			
 			// build asset
-			WebAsset asset = createAsset(context);
+			WebAsset asset = createAsset(context, webPathname, localPath);
 			
 			// advertise
 			if(context.isVerbose()) {
@@ -46,11 +56,11 @@ public abstract class BasicWebAssetFilter extends WebAssetFilter {
 			}
 			
 			// append the asset
-			for(String webPathname : expose(context.getWebPathname())) {
-				context.getContainer().appendAsset(webPathname, asset);		
+			for(String variant : expose(webPathname)) {
+				context.getContainer().appendAsset(variant, asset);		
 			}
 			
-			context.getUpdater().appendWatched(context.getLocalPath(), asset);
+			context.getUpdater().appendWatched(localPath, asset);
 		}
 	}
 	

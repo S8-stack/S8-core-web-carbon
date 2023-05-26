@@ -16,37 +16,37 @@ import com.s8.web.carbon.web.AssetUpdateModule;
  */
 public class CarbonBuildContext {
 
-	
+
 	/**
 	 * 
 	 */
-	private final Path localPath;
+	//private final Path localPath;
 
-	
+
 	/**
 	 * 
 	 */
-	private final String webPathname;
+	//private final String webPathname;
 
-	
+
 	/**
 	 * 
 	 */
 	protected final AssetContainerModule container;
 
-	
+
 	/**
 	 * 
 	 */
 	protected final AssetUpdateModule updater;
 
-	
+
 	/**
 	 * 
 	 */
 	protected final Set<String> excludedWebPathnames;
 
-	
+
 	protected final boolean isVerbose;
 
 	/**
@@ -55,33 +55,25 @@ public class CarbonBuildContext {
 	 * @param updater
 	 */
 	public CarbonBuildContext(AssetContainerModule container, 
-			AssetUpdateModule updater, 
-			String webPathname, 
-			Path localPath,
-			boolean isVerbose) {
+			AssetUpdateModule updater, boolean isVerbose) {
 		super();
 		this.container = container;
 		this.updater = updater;
 		this.excludedWebPathnames = new HashSet<String>();
 		this.isVerbose = isVerbose;
-		this.webPathname = webPathname;
-		this.localPath = localPath;
 	}
 
 
 
 	public CarbonBuildContext(CarbonBuildContext context, String webPathname, Path localPath) {
 		super();
-		
+
 		// copy previous context
 		this.container = context.container;
 		this.updater = context.updater;
 		this.excludedWebPathnames = context.excludedWebPathnames;
 		this.isVerbose = context.isVerbose;
-		
-		// pathnames
-		this.webPathname = webPathname;
-		this.localPath = localPath;
+
 	}
 
 
@@ -118,6 +110,7 @@ public class CarbonBuildContext {
 
 
 
+	/*
 
 	public Path getLocalPath() {
 		return localPath;
@@ -127,24 +120,10 @@ public class CarbonBuildContext {
 		return webPathname;
 	}
 
-
-
-
-
-
-
-	/**
-	 * 
-	 * @param pathname
-	 * @return
 	 */
-	public CarbonBuildContext move(String pathname) {
-		return new CarbonBuildContext(this,
-				webPathname.concat(pathname), 
-				localPath.resolve(pathname));
-	}
 
-	
+
+
 	/**
 	 * 
 	 * @param webPathname
@@ -153,7 +132,7 @@ public class CarbonBuildContext {
 	 */
 	public CarbonBuildContext relocate(String webPathname, Path path) {
 		return new CarbonBuildContext(this, webPathname, path);
-		
+
 	}
 
 
@@ -164,9 +143,9 @@ public class CarbonBuildContext {
 	public boolean isVerbose() {
 		return isVerbose;
 	}
-	
-	
-	public boolean isWebPathnameRegistered() {
+
+
+	public boolean isWebPathnameRegistered(String webPathname) {
 		return container.hasEntry(webPathname);
 	}
 

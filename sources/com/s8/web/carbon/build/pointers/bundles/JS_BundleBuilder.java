@@ -1,6 +1,7 @@
 package com.s8.web.carbon.build.pointers.bundles;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,16 +38,16 @@ public class JS_BundleBuilder extends WebAssetPointer {
 	}
 	
 	@Override
-	public WebAsset build(CarbonBuildContext context) throws IOException {
+	public WebAsset build(CarbonBuildContext context, String ctxWebPathname, Path ctxLocalPath) throws IOException {
 		List<JS_WebAsset> assets = new ArrayList<>();
 		JS_WebAsset jsAsset;
 		for(JS_Builder builder : sources) {
-			jsAsset = (JS_WebAsset) builder.build(context);
+			jsAsset = (JS_WebAsset) builder.build(context, ctxWebPathname, ctxLocalPath);
 			context.getUpdater().appendWatched(jsAsset.getPath(), jsAsset);
 			assets.add(jsAsset);
 		}
 		
-		String webPathname = context.getWebPathname()+name;
+		String webPathname = ctxWebPathname+name;
 				
 		JS_BundleWebAsset bundleAsset = new JS_BundleWebAsset(context.getContainer(),
 				webPathname, 

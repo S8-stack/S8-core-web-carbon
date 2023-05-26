@@ -1,5 +1,6 @@
 package com.s8.web.carbon.web;
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +45,15 @@ public class CarbonWebService {
 		public void setVerbosity(boolean flag) {
 			this.isVerbose = flag;
 		}
+		
+		
+		public String rootLocalPathname;
+		
+		@XML_SetElement(tag = "root-local-path")
+		public void setRootLocalPath(String pathname) {
+			this.rootLocalPathname = pathname;
+		}
+		
 
 		/**
 		 * 
@@ -56,6 +66,7 @@ public class CarbonWebService {
 	}
 
 
+	public final static String ROOT_WEB_PATHNAME = "/";
 
 	private final SiliconEngine app;
 
@@ -82,13 +93,17 @@ public class CarbonWebService {
 		this.updateModule = new AssetUpdateModule(app, isVerbose);
 		this.webModule = new AssetContainerModule(app, isVerbose);
 
-		CarbonBuildContext ctx = new CarbonBuildContext(webModule, updateModule, null, null, true);
+		CarbonBuildContext context = new CarbonBuildContext(webModule, updateModule, true);
+		
+		
+		String webPathname = ROOT_WEB_PATHNAME;
+		Path localPath = Path.of(config.rootLocalPathname);
 		
 		// modules
-		for(WebModule module : config.modules) { module.build(xml_Context, ctx); }
+		for(WebModule module : config.modules) { module.build(xml_Context, context, webPathname, localPath); }
 		
 		// sources
-		for(WebSources sources : config.sources) { sources.build(ctx); }
+		for(WebSources sources : config.sources) { sources.build(context, webPathname, localPath); }
 	}
 
 
