@@ -2,7 +2,7 @@ package com.s8.web.carbon.web;
 
 import com.s8.arch.magnesium.handlers.h1.H1Handler;
 import com.s8.arch.silicon.SiException;
-import com.s8.arch.silicon.async.AsyncTask;
+import com.s8.arch.silicon.async.SiAsyncTask;
 import com.s8.arch.silicon.async.MthProfile;
 import com.s8.io.bytes.linked.LinkedBytes;
 import com.s8.stack.arch.helium.http2.HTTP2_Status;
@@ -21,7 +21,7 @@ import com.s8.web.carbon.assets.WebAsset;
  * @author pierreconvert
  *
  */
-public class CarbonWebTask implements AsyncTask {
+public class CarbonWebTask implements SiAsyncTask {
 
 	
 	private final AssetContainerModule module;
