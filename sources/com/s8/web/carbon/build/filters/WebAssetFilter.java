@@ -29,7 +29,7 @@ public abstract class WebAssetFilter {
 	public final static int MAX_FRAME_SIZE = 16384;
 
 
-	public CachePolicy cacheControl;
+	public CachePolicy cacheControl = CachePolicy.STABLE;
 
 	@XML_SetAttribute(name = "cache")
 	public void setCacheControl(CachePolicy cacheControl) {

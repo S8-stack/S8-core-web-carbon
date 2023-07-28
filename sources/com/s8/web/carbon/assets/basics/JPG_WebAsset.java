@@ -33,8 +33,6 @@ public class JPG_WebAsset extends BasicWebAsset {
 			CachePolicy policy, 
 			int fragmentLength) {
 		super(module, webPathname, localPath, policy, fragmentLength);
-		
-		cacheControl = CachePolicy.HEAVY_AND_STABLE;
 	}
 	
 }

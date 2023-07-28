@@ -13,7 +13,7 @@ public enum CachePolicy {
 	/**
 	 * L'en-tête HTTP `Cache-Control: max-age=2592000` indique alors que la ressource est valide sur une durée de 2592000 secondes (soit environ 1 mois)
 	 */
-	HEAVY_AND_STABLE("public, max-age=2592000"),
+	STABLE("public, max-age=2592000"),
 	
 	
 	/**
