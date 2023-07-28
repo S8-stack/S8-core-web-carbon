@@ -59,7 +59,7 @@ public class CarbonWebTask implements SiAsyncTask {
 
 				@Override
 				public void onSuccessful(Payload payload) {
-					sendBytes(asset.mime_getType(), payload.bytes);
+					sendBytes(asset, payload.bytes);
 					/*
 					if(asset.mime_getType()==MIME_Type.SVG) {
 						System.out.println(new String(payload.bytes.bytes, StandardCharsets.UTF_8));
@@ -81,23 +81,27 @@ public class CarbonWebTask implements SiAsyncTask {
 		}
 	}
 
-	public void sendBytes(MIME_Type type, LinkedBytes bytes) {
+	public void sendBytes(WebAsset webAsset, LinkedBytes bytes) {
 
 		HTTP2_Message response = request.respond();
+		
 
+		
 		response.status = new Status(HTTP2_Status.OK);
 
 		// content-type
-		if(type!=null) {
+		MIME_Type mime_Type = webAsset.mime_getType();
+		if(mime_Type!=null) {
 			/*
 				if(type.)) {
 					contentType+="; charset="+type.getEncoding();	
 				}
 			 */
-			response.contentType = new ContentType(type.template);
+			response.contentType = new ContentType(mime_Type.template);
 		}
 
-		response.cacheControl = new CacheControl("CACHE");
+		
+		response.cacheControl = new CacheControl(webAsset.getCacheControl().value);
 
 		// content-length
 		response.contentLength = new ContentLength(Long.toString(bytes.getBytecount()));

@@ -18,7 +18,8 @@ public abstract class WebAsset extends H1Handler<Payload> {
 	
 	
 	
-	protected CachePolicy cacheControl;
+	protected CachePolicy cacheControl = CachePolicy.DEBUG;
+	
 	
 	/**
 	 * Canonical web pathname
