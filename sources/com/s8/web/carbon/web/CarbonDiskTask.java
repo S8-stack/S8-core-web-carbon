@@ -1,9 +1,9 @@
 package com.s8.web.carbon.web;
 
-import com.s8.arch.silicon.async.SiAsyncTask;
+import com.s8.arch.silicon.async.AsyncSiTask;
 import com.s8.arch.silicon.async.MthProfile;
 
-public abstract class CarbonDiskTask implements SiAsyncTask {
+public abstract class CarbonDiskTask implements AsyncSiTask {
 
 	public final AssetContainerModule service;
 	

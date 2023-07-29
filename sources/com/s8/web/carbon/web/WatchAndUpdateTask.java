@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 
-import com.s8.arch.silicon.watch.WatchTask;
+import com.s8.arch.silicon.watch.WatchSiTask;
 import com.s8.web.carbon.assets.WebAsset;
 
 /**
@@ -19,7 +19,7 @@ import com.s8.web.carbon.assets.WebAsset;
  * @author pierreconvert
  *
  */
-public class WatchAndUpdateTask implements WatchTask {
+public class WatchAndUpdateTask implements WatchSiTask {
 
 
 	private final AssetUpdateModule module;
@@ -40,7 +40,7 @@ public class WatchAndUpdateTask implements WatchTask {
 
 
 	@Override
-	public WatchTask run() {
+	public WatchSiTask run() {
 
 		WebAsset asset;
 
