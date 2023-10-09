@@ -28,6 +28,7 @@ module com.s8.web.carbon {
 
 	
 	/* <dependencies> */
+	requires transitive com.s8.api;
 	requires transitive com.s8.io.bytes;
 	requires transitive com.s8.io.xml;
 	requires transitive com.s8.io.csv;
@@ -35,7 +36,6 @@ module com.s8.web.carbon {
 	requires transitive com.s8.arch.silicon;
 	requires transitive com.s8.arch.magnesium;
 	requires transitive com.s8.web.helium;
-
 	/* </dependencies> */
 	
 }
