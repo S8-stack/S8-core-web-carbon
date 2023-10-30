@@ -2,8 +2,8 @@ package com.s8.web.carbon.assets.bundles;
 
 import java.util.List;
 
-import com.s8.io.bytes.linked.LinkedBytes;
-import com.s8.stack.arch.helium.mime.MIME_Type;
+import com.s8.core.io.bytes.linked.LinkedBytes;
+import com.s8.core.web.helium.mime.MIME_Type;
 import com.s8.web.carbon.assets.CachePolicy;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.assets.basics.JS_WebAsset;

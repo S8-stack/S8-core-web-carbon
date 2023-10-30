@@ -3,9 +3,9 @@ package com.s8.web.carbon.assets.basics;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import com.s8.arch.silicon.SiException;
-import com.s8.io.bytes.linked.LinkedBytes;
-import com.s8.stack.arch.helium.http2.HTTP2_Status;
+import com.s8.core.arch.silicon.SiException;
+import com.s8.core.io.bytes.linked.LinkedBytes;
+import com.s8.core.web.helium.http2.HTTP2_Status;
 import com.s8.web.carbon.assets.CachePolicy;
 import com.s8.web.carbon.assets.Payload;
 import com.s8.web.carbon.assets.WebAsset;

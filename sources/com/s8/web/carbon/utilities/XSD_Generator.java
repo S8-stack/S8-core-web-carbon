@@ -5,8 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-import com.s8.io.xml.codebase.XML_Codebase;
-import com.s8.io.xml.handler.type.XML_TypeCompilationException;
+import com.s8.core.io.xml.codebase.XML_Codebase;
+import com.s8.core.io.xml.handler.type.XML_TypeCompilationException;
 import com.s8.web.carbon.build.sources.WebSources;
 
 public class XSD_Generator {

@@ -1,6 +1,6 @@
 package com.s8.web.carbon.assets;
 
-import com.s8.io.bytes.linked.LinkedBytes;
+import com.s8.core.io.bytes.linked.LinkedBytes;
 
 public class Payload {
 

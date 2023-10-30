@@ -5,9 +5,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.io.xml.annotations.XML_SetAttribute;
-import com.s8.io.xml.annotations.XML_SetElement;
-import com.s8.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.annotations.XML_SetAttribute;
+import com.s8.core.io.xml.annotations.XML_SetElement;
+import com.s8.core.io.xml.annotations.XML_Type;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.build.CarbonBuildContext;
 import com.s8.web.carbon.build.pointers.WebAssetPointer;

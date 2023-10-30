@@ -3,8 +3,8 @@ package com.s8.web.carbon.build.pointers;
 import java.io.IOException;
 import java.nio.file.Path;
 
-import com.s8.io.xml.annotations.XML_SetAttribute;
-import com.s8.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.annotations.XML_SetAttribute;
+import com.s8.core.io.xml.annotations.XML_Type;
 import com.s8.web.carbon.assets.CachePolicy;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.build.CarbonBuildContext;

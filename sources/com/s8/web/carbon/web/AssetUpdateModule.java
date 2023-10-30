@@ -17,7 +17,7 @@ import java.nio.file.WatchService;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.s8.arch.silicon.SiliconEngine;
+import com.s8.core.arch.silicon.SiliconEngine;
 import com.s8.web.carbon.assets.WebAsset;
 
 

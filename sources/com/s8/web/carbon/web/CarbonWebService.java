@@ -4,12 +4,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.s8.arch.silicon.SiliconEngine;
-import com.s8.io.xml.annotations.XML_SetAttribute;
-import com.s8.io.xml.annotations.XML_SetElement;
-import com.s8.io.xml.annotations.XML_Type;
-import com.s8.io.xml.codebase.XML_Codebase;
-import com.s8.stack.arch.helium.http2.messages.HTTP2_Message;
+import com.s8.core.arch.silicon.SiliconEngine;
+import com.s8.core.io.xml.annotations.XML_SetAttribute;
+import com.s8.core.io.xml.annotations.XML_SetElement;
+import com.s8.core.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.codebase.XML_Codebase;
+import com.s8.core.web.helium.http2.messages.HTTP2_Message;
 import com.s8.web.carbon.build.CarbonBuildContext;
 import com.s8.web.carbon.build.sources.WebModule;
 import com.s8.web.carbon.build.sources.WebSources;

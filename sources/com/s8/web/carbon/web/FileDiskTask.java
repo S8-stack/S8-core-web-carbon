@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
 
-import com.s8.io.bytes.linked.LinkedBytes;
+import com.s8.core.io.bytes.linked.LinkedBytes;
 
 
 /**

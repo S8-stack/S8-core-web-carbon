@@ -2,7 +2,7 @@ package com.s8.web.carbon.build.pointers.basics;
 
 import java.nio.file.Path;
 
-import com.s8.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.annotations.XML_Type;
 import com.s8.web.carbon.assets.CachePolicy;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.assets.basics.JPG_WebAsset;

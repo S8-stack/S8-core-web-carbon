@@ -2,9 +2,9 @@ package com.s8.web.carbon.build.sources;
 
 import java.nio.file.Path;
 
-import com.s8.io.xml.annotations.XML_SetValue;
-import com.s8.io.xml.annotations.XML_Type;
-import com.s8.io.xml.codebase.XML_Codebase;
+import com.s8.core.io.xml.annotations.XML_SetValue;
+import com.s8.core.io.xml.annotations.XML_Type;
+import com.s8.core.io.xml.codebase.XML_Codebase;
 import com.s8.web.carbon.build.CarbonBuildContext;
 
 @XML_Type(name = "module")

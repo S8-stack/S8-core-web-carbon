@@ -3,7 +3,7 @@ package com.s8.web.carbon.web;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import com.s8.arch.silicon.SiliconEngine;
+import com.s8.core.arch.silicon.SiliconEngine;
 import com.s8.web.carbon.assets.WebAsset;
 import com.s8.web.carbon.syntax.CarbonSyntax;
 

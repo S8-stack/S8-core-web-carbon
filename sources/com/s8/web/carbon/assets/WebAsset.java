@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.s8.arch.magnesium.handlers.h1.H1Handler;
-import com.s8.arch.silicon.SiliconEngine;
-import com.s8.stack.arch.helium.mime.MIME_Type;
+import com.s8.core.arch.silicon.SiliconEngine;
+import com.s8.core.web.helium.mime.MIME_Type;
 import com.s8.web.carbon.web.AssetContainerModule;
 
 

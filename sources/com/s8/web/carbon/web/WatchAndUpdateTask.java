@@ -11,7 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 import java.nio.file.WatchKey;
 
-import com.s8.arch.silicon.watch.WatchSiTask;
+import com.s8.core.arch.silicon.watch.WatchSiTask;
 import com.s8.web.carbon.assets.WebAsset;
 
 /**

@@ -5,7 +5,7 @@
  * @author pierreconvert
  *
  */
-module com.s8.web.carbon {
+module com.s8.core.web.carbon {
 
 
 	/* <carbon> */
@@ -29,13 +29,13 @@ module com.s8.web.carbon {
 	
 	/* <dependencies> */
 	requires transitive com.s8.api;
-	requires transitive com.s8.io.bytes;
-	requires transitive com.s8.io.xml;
-	requires transitive com.s8.io.csv;
+	requires transitive com.s8.core.io.bytes;
+	requires transitive com.s8.core.io.xml;
+	requires transitive com.s8.core.io.csv;
 	
-	requires transitive com.s8.arch.silicon;
-	requires transitive com.s8.arch.magnesium;
-	requires transitive com.s8.web.helium;
+	requires transitive com.s8.core.arch.silicon;
+	requires transitive com.s8.core.arch.magnesium;
+	requires transitive com.s8.core.web.helium;
 	/* </dependencies> */
 	
 }
