@@ -31,7 +31,7 @@ module com.s8.core.web.carbon {
 	requires transitive com.s8.api;
 	requires transitive com.s8.core.io.bytes;
 	requires transitive com.s8.core.io.xml;
-	requires transitive com.s8.core.io.csv;
+	//requires transitive com.s8.core.io.csv;
 	
 	requires transitive com.s8.core.arch.silicon;
 	requires transitive com.s8.core.arch.magnesium;
