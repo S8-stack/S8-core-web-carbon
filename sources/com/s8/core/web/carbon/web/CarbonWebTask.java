@@ -1,6 +1,6 @@
 package com.s8.core.web.carbon.web;
 
-import com.s8.arch.magnesium.handlers.h1.H1Handler;
+import com.s8.core.arch.magnesium.handlers.h1.H1Handler;
 import com.s8.core.arch.silicon.SiException;
 import com.s8.core.arch.silicon.async.AsyncSiTask;
 import com.s8.core.arch.silicon.async.MthProfile;
