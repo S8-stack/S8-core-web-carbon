@@ -9,21 +9,21 @@ module com.s8.core.web.carbon {
 
 
 	/* <carbon> */
-	exports com.s8.web.carbon.assets;
+	exports com.s8.core.web.carbon.assets;
 	
-	exports com.s8.web.carbon.build;
+	exports com.s8.core.web.carbon.build;
 
-	exports com.s8.web.carbon.build.pointers;
-	exports com.s8.web.carbon.build.pointers.basics;
-	exports com.s8.web.carbon.build.pointers.bundles;
-	exports com.s8.web.carbon.build.pointers.folder;
+	exports com.s8.core.web.carbon.build.pointers;
+	exports com.s8.core.web.carbon.build.pointers.basics;
+	exports com.s8.core.web.carbon.build.pointers.bundles;
+	exports com.s8.core.web.carbon.build.pointers.folder;
 		
-	exports com.s8.web.carbon.build.filters;
-	exports com.s8.web.carbon.build.filters.basics;
+	exports com.s8.core.web.carbon.build.filters;
+	exports com.s8.core.web.carbon.build.filters.basics;
 	
-	exports com.s8.web.carbon.build.sources;
+	exports com.s8.core.web.carbon.build.sources;
 
-	exports com.s8.web.carbon.web;
+	exports com.s8.core.web.carbon.web;
 	/* </carbon> */
 
 	
