@@ -34,7 +34,7 @@ module com.s8.core.web.carbon {
 	//requires transitive com.s8.core.io.csv;
 	
 	requires transitive com.s8.core.arch.silicon;
-	requires transitive com.s8.core.arch.magnesium;
+	requires transitive com.s8.core.arch.titanium;
 	requires transitive com.s8.core.web.helium;
 	/* </dependencies> */
 	

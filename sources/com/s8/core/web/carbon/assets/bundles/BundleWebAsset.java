@@ -1,7 +1,7 @@
 package com.s8.core.web.carbon.assets.bundles;
 
-import com.s8.core.arch.magnesium.handlers.h1.H1Handler;
 import com.s8.core.arch.silicon.SiException;
+import com.s8.core.arch.titanium.handlers.h1.H1Handler;
 import com.s8.core.io.bytes.linked.LinkedBytes;
 import com.s8.core.web.carbon.assets.CachePolicy;
 import com.s8.core.web.carbon.assets.Payload;
