@@ -3,10 +3,10 @@ const ROOT = build({
 	dependencies: [
 		"S8-api",
 		"S8-core-io-xml",
-		"S8-core-io-joos",
+		"S8-core-io-JSON",
 		"S8-core-io-bytes",
 		"S8-core-arch-silicon",
-		"S8-core-arch-magnesium",
+		"S8-core-arch-titanium",
 		"S8-core-bohr-atom",
 		"S8-core-bohr-beryllium",
 		"S8-core-bohr-lithium",
@@ -14,5 +14,5 @@ const ROOT = build({
 		"S8-core-bohr-neon",
 		"S8-core-web-helium"
 	],
-	target: "S8-core-web-carbon",
+	target: "S8-core-web-carbon"
 });
